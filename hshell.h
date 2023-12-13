@@ -29,6 +29,7 @@ typedef struct{
 #define uI NULL, \
 		NULL, \
 	   0, \
+		 0, \
 		0, \
 		0
 /*

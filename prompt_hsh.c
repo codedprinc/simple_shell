@@ -6,7 +6,7 @@
 
 void readIn(prom_st *input)
 {
-//	tok_st nizer = { tk_uI };
+/*	tok_st nizer = { tk_uI };*/
 	while(1)
 	{
 		write(1, "($) ", 4);
@@ -24,7 +24,7 @@ void readIn(prom_st *input)
 
 		input->line[strcspn(input->line, "\n")] = '\0';
 		/*if (strncmp(input->line, "./", 2) == 0 || strncmp(input->line, "/", 1) == 0)*/
-		//{
+		/*{*/
 
 			input->argv = _tokenizer(input->line, " \n\t");
 		if (input->argv[0] != NULL)
@@ -47,8 +47,8 @@ void readIn(prom_st *input)
                                 wait(&(input->status));
                         }
 		}
-		//write(1, input->line, strlen(input->line));
-		//write(1, "\n", 1);
+		/*write(1, input->line, strlen(input->line));
+		  write(1, "\n", 1);*/
 		free(input->argv);
 	}
 	free(input->line);
