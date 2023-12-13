@@ -13,8 +13,7 @@ void readIn(prom_st *input)
 		input->n_read = getline(&(input->line), &(input->len), stdin);
 		if (input->n_read == -1)
                 {
-                        perror(" ");
-                        break;
+			break;
                 }
 		if (input->n_read == 0)
 		{
@@ -26,7 +25,7 @@ void readIn(prom_st *input)
 		/*if (strncmp(input->line, "./", 2) == 0 || strncmp(input->line, "/", 1) == 0)*/
 		/*{*/
 
-			input->argv = _tokenizer(input->line, " \n\t");
+			input->argv = _tokenizer(input->line, "  \n\t");
 		if (input->argv[0] != NULL)
 		{
 			input->child_pid = fork();
@@ -37,7 +36,7 @@ void readIn(prom_st *input)
                         }
                         else if (input->child_pid == 0)
                         {
-                                execve(input->argv[0], input->argv, environ);
+                                execve(input->argv[0], input->argv, NULL);
 				perror("./hsh");
 
 				_exit(EXIT_FAILURE);

@@ -19,6 +19,13 @@ char **_tokenizer(char *cmd, char *delim)
 		token = strtok(NULL,delim);
 	}
 
+	/*if (n_tokens > 1)
+	{
+		perror("Args, not allowed");
+		free(cpcmd);
+		free(cpcmd2);
+		return (NULL);
+	}*/
 	argv = malloc((n_tokens + 1) * sizeof (char*));
 	token = strtok(cpcmd2, delim);
 	while (token != NULL)
@@ -29,6 +36,7 @@ char **_tokenizer(char *cmd, char *delim)
 		i++;
 	}
 	argv[i] = NULL;
+	argv[1] = NULL;
 	free(cpcmd);
 	free(cpcmd2);
 	return(argv);
