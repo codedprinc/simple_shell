@@ -7,26 +7,26 @@
  */
 char **_tokenizer(char *cmd, char *delim)
 {
-	cpcmd = strdup(cmd);
-	cpcmd2 = strdup(cmd);
-	token = strtok(cpcmd, delim);
-	while (token != NULL)
+	globalVars->cpcmd = _strdup(cmd);
+	globalVars->cpcmd2 = _strdup(cmd);
+	globalVars->token = strtok(cpcmd, delim);
+	while (globalVars->token != NULL)
 	{
-		n_tokens++;
-		token = strtok(NULL,delim);
+		globalVars->n_tokens++;
+		globalVars->token = strtok(NULL,delim);
 	}
 
-	argv_1 = malloc((n_tokens + 1) * sizeof (char*));
-	token = strtok(cpcmd2, delim);
-	while (token != NULL)
+	globalVars->argv_1 = malloc((n_tokens + 1) * sizeof (char*));
+	globalVars->token = strtok(cpcmd2, delim);
+	while (globalVars->token != NULL)
 	{
-		argv_1[i] = malloc((_strlen (token) + 1) * sizeof (char));
-		_strcpy(argv_1[i], token);
-		token = strtok(NULL, delim);
+		globalVars->argv_1[i] = malloc((_strlen (token) + 1) * sizeof (char));
+		_strcpy(globalVars->argv_1[i], globalVars->token);
+		globalVars->token = strtok(NULL, delim);
 		i++;
 	}
-	argv_1[i] = NULL;
-	free(cpcmd);
-	free(cpcmd2);
-	return(argv_1);
+	globalVars->argv_1[i] = NULL;
+	free(globalVars->cpcmd);
+	free(globalVars->cpcmd2);
+	return(globalVars->argv_1);
 }
