@@ -31,6 +31,7 @@ typedef struct{
 	   0, \
 		0, \
 		0
+/*
 typedef struct{
 	char *cpmd;
 	char *cpmcd2;
@@ -44,7 +45,7 @@ typedef struct{
 		0, \
 		0
 
-
+*/
 void readIn(prom_st *input);
-char **_tokenizer(char *cmd, char *delim, tok_st *inpu);
+char **_tokenizer(char *cmd, char *delim);
 #endif

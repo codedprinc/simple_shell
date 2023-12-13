@@ -6,7 +6,7 @@
 
 void readIn(prom_st *input)
 {
-	tok_st nizer = { tk_uI };
+//	tok_st nizer = { tk_uI };
 	while(1)
 	{
 		write(1, "($) ", 4);
@@ -26,7 +26,7 @@ void readIn(prom_st *input)
 		/*if (strncmp(input->line, "./", 2) == 0 || strncmp(input->line, "/", 1) == 0)*/
 		//{
 
-			input->argv = _tokenizer(input->line, " \n\t", &nizer);
+			input->argv = _tokenizer(input->line, " \n\t");
 		if (input->argv[0] != NULL)
 		{
 			input->child_pid = fork();
