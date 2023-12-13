@@ -1,0 +1,11 @@
+#include "main.h"
+/**
+ * main - entry point to the shell -hsh.
+ * @void: no argument.
+ *
+ * Return: 0 on success.
+ */
+int main(void)
+{
+	
+}
