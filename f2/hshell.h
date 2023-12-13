@@ -1,4 +1,5 @@
-#define __MAIN_H__
+#ifndef __HSHELL_H__
+#define __HSHELL_H__
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +27,7 @@ extern char **environ;
  * @child_pid:d
  * @status:d
  */
-typedef struct gb_var
+typedef struct
 {
 	char **line;
 	char **argv;
@@ -36,8 +37,6 @@ typedef struct gb_var
 	int status;
 }mj_var;
 
-#define VAR_VAL \
-	{NULL, NULL, NULL, 0, 0, 0, 0}
 /*Function protoypes - name of file*/
-
+mj_var *getGlobalVariables(void);
 #endif

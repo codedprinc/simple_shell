@@ -16,29 +16,11 @@
 #include <fcntl.h>
 #include <stdint.h>
 #include <sys/sysmacros.h>
-
 extern char **environ;
-/**
- * struct gb_var - contains varivales used in made up functions.
- * @line:d
- * @argv:d
- * @len:d
- * @nread:d
- * @child_pid:d
- * @status:d
- */
-typedef struct gb_var
-{
-	char **line;
-	char **argv;
+typedef struct{
+	char *line;
 	size_t len;
-	ssize_t nread;
-	pid_t child_pid;
-	int status;
-}mj_var;
+}prom_st;
 
-#define VAR_VAL \
-	{NULL, NULL, NULL, 0, 0, 0, 0}
-/*Function protoypes - name of file*/
-
+void readIn(prom_st *input);
 #endif
