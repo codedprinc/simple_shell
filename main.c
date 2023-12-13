@@ -40,7 +40,7 @@ int main(void)
 		}
 		else
 		{
-			write(1, &line, &len);
+			write(1, line, nread);
 		}
 	}
 	free(line);
