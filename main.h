@@ -19,21 +19,21 @@
 
 extern char **environ;
 /*statments for main.c*/
-char *line;// = NULL;
-char *line_copy;// = NULL;
-char **argv;// = NULL;
-size_t len;// = 0;
-ssize_t nread;
-pid_t child_pid;
-int status;
+extern char *line = NULL;
+extern char *line_copy = NULL;
+extern char **argv = NULL;
+extern size_t len = 0;
+extern ssize_t nread;
+extern pid_t child_pid;
+extern int status;
 
 /*statements for tokenizer.c */
-char **argv_1;// = NULL;
-char *cpcmd;// = NULL;
-char *cpcmd2;// = NULL;
-int n_tokens = 0;
-char *token;// = NULL;
-int i = 0;
+extern char **argv_1 = NULL;
+extern char *cpcmd = NULL;
+extern char *cpcmd2 = NULL;
+extern int n_tokens = 0;
+extern char *token = NULL;
+extern int i = 0;
 
 /*function prototypes*/
 size_t _strcspn(const char *s, const char *reject);
