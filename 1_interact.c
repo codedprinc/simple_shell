@@ -10,14 +10,13 @@ void interactive(void)
 
 /**
  * non_Intercative - does something (yet).
- * @void: no argument.
+ * @inputbuf: data from read sys call.
  */
-void non_Interactive(char **arptr)
+void non_Interactive(char *inputbuf)
 {
-	int i = 0;
-	while (arptr != NULL)
-	{
-		printf("%s", arptr[i]);
-		i++;
-	}
+	char dupbuf[BUFSIZE];
+
+	strcpy(dupbuf, inputbuf);
+	printf("%s",dupbuf);
+
 }

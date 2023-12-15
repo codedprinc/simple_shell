@@ -22,5 +22,7 @@ extern char **environ;
 
 /*function prototypes*/
 void interactive(void);
-void non_Interactive(char **arptr);
+void non_Interactive(char *inputbuf);
+void prompt();
+void file_checker(char *data);
 #endif

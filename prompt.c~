@@ -1,0 +1,25 @@
+#include "header.h"
+/**
+ * prompt - prompt for the hsh shell.
+ * @void: .
+ */
+void prompt()
+{
+	char *getdata = NULL;
+	size_t len;
+	ssize_t n_read;
+
+	while(1)
+	{
+		write(1, "($) ", 4);
+		n_read = getline(&getdata, &len, stdin);
+
+		if (n_read == -1)
+		{
+			perror("");
+			exit(EXIT_FAILURE);
+		}
+		getdata[strcspn(getdata, "/n")] = '\0';
+		printf("%s", getdata);
+	}
+}

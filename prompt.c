@@ -1,0 +1,40 @@
+#include "header.h"
+/**
+ * prompt - prompt for the hsh shell.
+ * @void: .
+ */
+void prompt()
+{
+	char *getdata = NULL;
+	char *getdata_2 = NULL;
+	char dupdata[BUFSIZE];
+	size_t len;
+	ssize_t n_read;
+
+	while(1)
+	{
+		write(1, "($) ", 4);
+		n_read = getline(&getdata, &len, stdin);
+
+		if (n_read == -1)
+		{
+			perror("");
+			free(getdata);
+			exit(EXIT_FAILURE);
+		}
+		getdata_2 = strtok(getdata, "\n");
+		getdata_2 = strcat(getdata_2, "\0");
+		strcpy(dupdata, getdata_2);
+		if (dupdata[0] == '/' || dupdata [0] == '.')
+		{
+			printf("Ok\n");
+			file_checker(dupdata);
+		}
+		else
+		{
+			write(1, getdata, strlen(getdata));
+			write(1, "\n", 1);
+		}
+	}
+	free(getdata);
+}
