@@ -15,18 +15,14 @@ int main(void)
 	}
 	else
 	{
-		r_read = read(0, buf, sizeof(buf) - 1);
-		if (r_read > 0)
+		while((r_read = read(0, buf, sizeof(buf) - 1)) > 0)
 		{
 			buf[r_read] ='\0';
-//			printf("%s", buf);
 			non_Interactive(buf);
-//			free(buf);
 		}
-		else
+		if (r_read == -1)
 		{
 			perror("PIPE ERROR:");
-//			free(buf);
 			exit(EXIT_FAILURE);
 		}
 	}

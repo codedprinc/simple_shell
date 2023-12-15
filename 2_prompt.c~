@@ -28,7 +28,16 @@ void prompt()
 		if (dupdata[0] == '/' || dupdata [0] == '.')
 		{
 			printf("Ok\n");
-			file_checker(dupdata);
+			int wait = file_checker(dupdata);
+			if (wait == 0)
+			{
+				printf("\nfound\n");
+				
+			}
+			else
+			{
+				printf("\n error\n");
+			}
 		}
 		else
 		{

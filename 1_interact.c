@@ -17,6 +17,7 @@ void non_Interactive(char *inputbuf)
 	char dupbuf[BUFSIZE];
 
 	strcpy(dupbuf, inputbuf);
-	printf("%s",dupbuf);
+	//printf("%s",dupbuf);
+	prompt_nI(dupbuf);
 
 }

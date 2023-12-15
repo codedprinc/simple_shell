@@ -24,5 +24,8 @@ extern char **environ;
 void interactive(void);
 void non_Interactive(char *inputbuf);
 void prompt();
-void file_checker(char *data);
+int file_checker(char *data);
+int builtin_cmd(char *inputcmd);
+char **_tokenize(char *cmd, char *delim);
+void prompt_nI(char *incmd);
 #endif
