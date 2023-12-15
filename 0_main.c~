@@ -1,0 +1,11 @@
+#include "header.h"
+/**
+ * main - entry point to the program.
+ * @void: no arg.
+ * Return: 0 if successful.
+ */
+int main(void)
+{
+	
+	return(0);
+}
