@@ -12,12 +12,11 @@ void interactive(void)
  * non_Intercative - does something (yet).
  * @inputbuf: data from read sys call.
  */
-void non_Interactive(char *inputbuf)
+void non_Interactive(char *inputbuf, int j)
 {
 	char dupbuf[BUFSIZE];
 
 	strcpy(dupbuf, inputbuf);
-	//printf("%s",dupbuf);
-	prompt_nI(dupbuf);
-
+	printf("%s: [%d]\n",dupbuf, j);
+	prompt_nI(dupbuf, j);
 }

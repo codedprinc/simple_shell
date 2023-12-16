@@ -19,13 +19,14 @@
 extern char **environ;
 
 #define BUFSIZE 1024
+#define LINESIZE 1000
 
 /*function prototypes*/
 void interactive(void);
-void non_Interactive(char *inputbuf);
+void non_Interactive(char *inputbuf, int j);
 void prompt();
 int file_checker(char *data);
 int builtin_cmd(char *inputcmd);
 char **_tokenize(char *cmd, char *delim);
-void prompt_nI(char *incmd);
+void prompt_nI(char *incmd, int k);
 #endif
