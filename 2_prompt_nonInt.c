@@ -10,7 +10,7 @@ void prompt_nI(char *incmd)
 	int wait2;
 
 	strcpy(dupdata, incmd);
-	printf("prompt_nI has: %s\n", dupdata);
+	/*printf("prompt_nI has: %s\n", dupdata);*/
 	child = fork();
 	if (child == 0)
 	{

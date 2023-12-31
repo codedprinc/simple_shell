@@ -23,7 +23,7 @@ void non_Interactive(char *inputbuf)
 
 	while (token != NULL)
 	{
-		printf("%s: %d\n", token, i);
+		/*printf("%s: %d\n", token, i);*/
 		prompt_nI(token);
 		token = strtok(NULL, "\n");
 		i++;
