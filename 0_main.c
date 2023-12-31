@@ -8,8 +8,6 @@ int main(void)
 {
 	char buf[BUFSIZE];
 	ssize_t r_read;
-	int i = 0;
-	char *token;
 
 	if (isatty(STDIN_FILENO) != 0)
 	{
@@ -17,24 +15,12 @@ int main(void)
 	}
 	else
 	{
-		while((r_read = read(0, buf, BUFSIZE)) > 0)
+		r_read = read(0, buf, BUFSIZE - 1);
+		if (r_read > 0)
 		{
-			buf[r_read] ='\0';
-			token = strtok(buf, " \t\n");
-
-			while (token != NULL)
-			{
-				printf("Token[%d]: %s\n", i, token);
-				non_Interactive(token, i);
-				token = strtok(NULL, " \t\n");
-				i++;
-			}
-			printf("\ndone\n");
-		}
-		if (r_read == -1)
-		{
-			perror("PIPE ERROR:");
-			exit(EXIT_FAILURE);
+			buf[r_read - 1] = '\0';
+			/*printf("%s\n", buf);*/
+			non_Interactive(buf);
 		}
 	}
 	return (0);

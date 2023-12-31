@@ -23,10 +23,10 @@ extern char **environ;
 
 /*function prototypes*/
 void interactive(void);
-void non_Interactive(char *inputbuf, int j);
+void non_Interactive(char *inputbuf);
 void prompt();
 int file_checker(char *data);
-int builtin_cmd(char *inputcmd);
+void builtin_cmd(char *inputcmd);
 char **_tokenize(char *cmd, char *delim);
-void prompt_nI(char *incmd, int k);
+void prompt_nI(char *incmd);
 #endif

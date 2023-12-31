@@ -12,11 +12,21 @@ void interactive(void)
  * non_Intercative - does something (yet).
  * @inputbuf: data from read sys call.
  */
-void non_Interactive(char *inputbuf, int j)
+void non_Interactive(char *inputbuf)
 {
 	char dupbuf[BUFSIZE];
+	int i = 0;
+	char * token;
 
 	strcpy(dupbuf, inputbuf);
-	printf("%s: [%d]\n",dupbuf, j);
-	prompt_nI(dupbuf, j);
+	token = strtok(dupbuf, "\n");
+
+	while (token != NULL)
+	{
+		printf("%s: %d\n", token, i);
+		prompt_nI(token);
+		token = strtok(NULL, "\n");
+		i++;
+	}
+	/*prompt_nI(dupbuf);*/
 }

@@ -3,12 +3,22 @@
  * prompt_nI - prompt for the hsh shell in nonInteractive mode.
  * @incmd: takes cmd from the pipe cmd
  */
-void prompt_nI(char *getdata, int k)
+void prompt_nI(char *incmd)
 {
-/*	char *getdata_2 = NULL;*/
 	char dupdata[BUFSIZE];
+	pid_t child;
+	int wait2;
 
-	strcpy(dupdata,getdata);
-	printf("prompt_nI has: %d [%d]\n", dupdata[1], k);
-/*	builtin_cmd(dupdata);*/
+	strcpy(dupdata, incmd);
+	printf("prompt_nI has: %s\n", dupdata);
+	child = fork();
+	if (child == 0)
+	{
+		builtin_cmd(dupdata);
+	}
+	else
+	{
+		wait(&wait2);
+		usleep(1000);
+	}
 }

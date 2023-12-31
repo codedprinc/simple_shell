@@ -4,7 +4,7 @@
  * @inputcmd: command to be executed.
  * Return: 0 if successful, 1 if not.
  */
-int builtin_cmd(char *inputcmd)
+void builtin_cmd(char *inputcmd)
 {
 	char **argv;
 	char dupcmd[BUFSIZE];
@@ -14,10 +14,6 @@ int builtin_cmd(char *inputcmd)
 	if (execve(argv[0], argv, NULL) == -1)
 	{
 		perror("ERROR:");
-		return (1);
-	}
-	else
-	{
-		return (0);
+		exit(EXIT_FAILURE);
 	}
 }

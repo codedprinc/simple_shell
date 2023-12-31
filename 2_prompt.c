@@ -37,7 +37,8 @@ void prompt()
 				child = fork();
 				if (child == 0)
 				{
-					int new = builtin_cmd(dupdata);
+					 builtin_cmd(dupdata);
+					/*int new
 					if (new == 0)
 					{
 						printf("ok\n");
@@ -45,7 +46,7 @@ void prompt()
 					else
 					{
 						printf("\n--\n");
-					}
+					}*/
 				}
 				else
 				{
