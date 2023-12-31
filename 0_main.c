@@ -9,6 +9,7 @@ int main(void)
 	char buf[BUFSIZE];
 	ssize_t r_read;
 	int i = 0;
+	char *token;
 
 	if (isatty(STDIN_FILENO) != 0)
 	{
@@ -19,12 +20,11 @@ int main(void)
 		while((r_read = read(0, buf, BUFSIZE)) > 0)
 		{
 			buf[r_read] ='\0';
-			char *token = strtok(buf, " \t\n");
+			token = strtok(buf, " \t\n");
 
 			while (token != NULL)
 			{
 				printf("Token[%d]: %s\n", i, token);
-				// Access each token here
 				non_Interactive(token, i);
 				token = strtok(NULL, " \t\n");
 				i++;

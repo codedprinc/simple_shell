@@ -10,6 +10,8 @@ void prompt()
 	char dupdata[BUFSIZE];
 	size_t len;
 	ssize_t n_read;
+	int wait2;
+	pid_t child;
 
 	while(1)
 	{
@@ -28,11 +30,11 @@ void prompt()
 		if (dupdata[0] == '/' || dupdata [0] == '.')
 		{
 			printf("Ok\n");
-			int wait2 = file_checker(dupdata);
+			wait2 = file_checker(dupdata);
 			if (wait2 == 0)
 			{
 				printf("\nfound\n");
-				pid_t child = fork();
+				child = fork();
 				if (child == 0)
 				{
 					int new = builtin_cmd(dupdata);

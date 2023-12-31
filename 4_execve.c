@@ -6,10 +6,11 @@
  */
 int builtin_cmd(char *inputcmd)
 {
+	char **argv;
 	char dupcmd[BUFSIZE];
 
 	strcpy(dupcmd, inputcmd);
-	char **argv = _tokenize(dupcmd, " \n\t");
+	argv = _tokenize(dupcmd, " \n\t");
 	if (execve(argv[0], argv, NULL) == -1)
 	{
 		perror("ERROR:");
