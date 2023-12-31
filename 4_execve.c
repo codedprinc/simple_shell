@@ -13,7 +13,6 @@ void builtin_cmd(char *inputcmd)
 	argv = _tokenize(dupcmd, " \n\t");
 	if (execve(argv[0], argv, NULL) == -1)
 	{
-		perror("ERROR:");
 		exit(EXIT_FAILURE);
 	}
 }
